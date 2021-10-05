@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d6493d3-081e-446c-b9ed-14e9d502ec19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spreetail/MVDAppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spreetail/MVDApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MVDApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDict.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDict.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/spreetail/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spreetail/MVDAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spreetail/MVDAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.spreetail.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.spreetail.MVDAppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.spreetail.MVDAppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.spreetail.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.spreetail.MVDAppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.spreetail.MVDAppTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +47,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Maven.MVDApp [test]">
+  <component name="RunManager" selected="Application.MVDApp">
     <configuration name="MVDApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spreetail.MVDApp" />
       <module name="MVDApp" />
@@ -59,6 +67,21 @@
           <option name="containerStateName" value="" />
         </value>
       </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MVDAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MVDApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spreetail.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spreetail" />
+      <option name="MAIN_CLASS_NAME" value="com.spreetail.MVDAppTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,8 +114,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Maven.MVDApp [test]" />
         <item itemvalue="Application.MVDApp" />
+        <item itemvalue="Maven.MVDApp [test]" />
+        <item itemvalue="JUnit.MVDAppTest" />
       </list>
     </recent_temporary>
   </component>
@@ -104,11 +128,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633379961242</updated>
-      <workItem from="1633379962704" duration="7814000" />
+      <workItem from="1633379962704" duration="15367000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="21" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

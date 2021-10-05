@@ -8,11 +8,11 @@ public interface MultiValueDict {
 
     // Returns all the keys in the dictionary.
     // Order is not guaranteed.
-    public List<String> getKeys();
+    public Set<String> getKeys();
 
     // Returns the collection of strings for the given key. Return order is not guaranteed.
     // Returns an error if the key does not exists.
-    public List<String> getMembers(String key) throws MultiValueDictException;
+    public Set<String> getMembers(String key) throws MultiValueDictException;
 
     // Adds a member to a collection for a given key. Displays an error if the member already exists for the key.
     public void addEntry(String key, String member) throws MultiValueDictException;;
@@ -36,8 +36,8 @@ public interface MultiValueDict {
     public boolean memberExists(String key, String member);
 
     // Returns all the members in the dictionary. Returns nothing if there are none. Order is not guaranteed.
-    public List<String> getAllMembers();
+    public Set<String> getAllMembers();
 
     // Returns all keys in the dictionary and all of their members. Returns nothing if there are none. Order is not guaranteed.
-    public List<?> getAllItems();
+    public Set<?> getAllItems();
 }

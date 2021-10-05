@@ -4,8 +4,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -17,31 +19,33 @@ public class MVDAppTest {
 
     @Before
     public void setup() throws MultiValueDictException {
-        mvd = new MultiValueDictImpl();
+        this.mvd = new MultiValueDictImpl();
     }
 
     @After
-    private void tearDown() {
-        this.mvd = null;
+    public void tearDown() {
+        this.mvd = new MultiValueDictImpl();
     }
 
-    private List<String> addTestKeys() throws MultiValueDictException {
-        List<String> keys = new ArrayList<String>();
+    private Set<String> addTestKeys() throws MultiValueDictException {
+        Set<String> keys = new HashSet<String>();
         keys.add("key1");
         keys.add("key2");
         for (String key : keys)
-            this.mvd.addEntry(key, null);
+            this.mvd.addEntry(key, "defaultMember");
         return keys;
     }
 
 
-    private List<String> addTestMembers(List<String> keys) throws MultiValueDictException {
-        List<String> members = new ArrayList<String>();
-        keys.add("member1");
-        keys.add("member2");
+    private Set<String> addTestMembers(Set<String> keys) throws MultiValueDictException {
+        Set<String> members = new HashSet<String>();
+        members.add("member1");
+        members.add("member2");
         for (String key : keys)
             for (String member : members)
-                this.mvd.addEntry(key, member);
+                mvd.addEntry(key, member);
+
+        members.add("defaultMember");
         return members;
     }
 
@@ -50,7 +54,7 @@ public class MVDAppTest {
     // Order is not guaranteed.
     @Test
     public void shouldGetKeys() {
-        List<String> expectedKeys = null;
+        Set<String> expectedKeys = null;
         try {
             expectedKeys = addTestKeys();
             assertTrue(expectedKeys.equals(mvd.getKeys()));
@@ -63,8 +67,8 @@ public class MVDAppTest {
     // Returns an error if the key does not exists.
     @Test
     public void shouldGetMembers() {
-        List<String> expectedKeys = null;
-        List<String> expectedMembers = null;
+        Set<String> expectedKeys = null;
+        Set<String> expectedMembers = null;
         try {
             expectedKeys = addTestKeys();
             expectedMembers = addTestMembers(expectedKeys);
@@ -93,12 +97,16 @@ public class MVDAppTest {
     //error
     @Test
     public void shouldRemoveMember() {
-        List<String> expectedKeys = null;
-        List<String> expectedMembers = null;
+        String testKey = "testKey";
+        String testMember = "testMember1";
+        String testMember2 = "testMember2";
+
         try {
-            expectedKeys = addTestKeys();
-            expectedMembers = addTestMembers(expectedKeys);
-            mvd.removeMember(expectedKeys.get(0), expectedMembers.get(0));
+            mvd.addEntry(testKey, testMember);
+            mvd.addEntry(testKey, testMember2);
+            mvd.removeMember(testKey, testMember);
+            assertFalse(mvd.memberExists(testKey, testMember));
+            assertTrue(mvd.memberExists(testKey, testMember2));
         } catch (MultiValueDictException e) {
             assertTrue(false);
         }
@@ -108,13 +116,13 @@ public class MVDAppTest {
     // Returns an error if the key does not exist.
     @Test
     public void shouldRemoveAll() {
-        List<String> expectedKeys = null;
-        List<String> expectedMembers = null;
+
+        String testKey = "testKey";
+        String testMember = "testMember";
         try {
-            expectedKeys = addTestKeys();
-            expectedMembers = addTestMembers(expectedKeys);
-            mvd.removeAll(expectedKeys.get(0));
-            assertFalse(mvd.keyExists(expectedKeys.get(0)));
+            mvd.addEntry(testKey, testMember);
+            mvd.removeAll(testKey);
+            assertFalse(mvd.keyExists(testKey));
         } catch (MultiValueDictException e) {
             assertTrue(false);
         }
@@ -123,13 +131,12 @@ public class MVDAppTest {
     // Removes all keys and all members from the dictionary.
     @Test
     public void shouldBeClear() {
-        List<String> expectedKeys = null;
-        List<String> expectedMembers = null;
+        String testKey = "testKey";
+        String testMember = "testMember";
         try {
-            expectedKeys = addTestKeys();
-            expectedMembers = addTestMembers(expectedKeys);
+            mvd.addEntry(testKey, testMember);
             mvd.clear();
-            assertFalse(mvd.keyExists(expectedKeys.get(0)));
+            assertFalse(mvd.keyExists(testKey));
         } catch (MultiValueDictException e) {
             assertTrue(false);
         }
@@ -138,7 +145,7 @@ public class MVDAppTest {
     // Returns whether a key exists or not.
     @Test
     public void keyShouldExist() {
-        List<String> expectedKeys = null;
+        Set<String> expectedKeys = null;
         try {
             expectedKeys = addTestKeys();
             for (String key : expectedKeys)
@@ -151,8 +158,8 @@ public class MVDAppTest {
     // Returns whether a member exists within a key. Returns false if the key does not exist.
     @Test
     public void membersShouldExist() {
-        List<String> expectedKeys = null;
-        List<String> expectedMembers = null;
+        Set<String> expectedKeys = null;
+        Set<String> expectedMembers = null;
         try {
             expectedKeys = addTestKeys();
             expectedMembers = addTestMembers(expectedKeys);
@@ -167,8 +174,8 @@ public class MVDAppTest {
     // Returns all the members in the dictionary. Returns nothing if there are none. Order is not guaranteed.
     @Test
     public void shouldGetAllMembers() {
-        List<String> expectedKeys = null;
-        List<String> expectedMembers = null;
+        Set<String> expectedKeys = null;
+        Set<String> expectedMembers = null;
         try {
             expectedKeys = addTestKeys();
             expectedMembers = addTestMembers(expectedKeys);
@@ -180,10 +187,11 @@ public class MVDAppTest {
 
     // Returns all keys in the dictionary and all of their members. Returns nothing if there are none. Order is not guaranteed.
     @Test
-    public void getAllItems() {
-        List<String> expectedKeys = null;
-        List<String> expectedMembers = null;
-        List<String> items = new ArrayList<String>();
+    public void shouldGetAllItems() {
+        Set<String> expectedKeys = null;
+        Set<String> expectedMembers = null;
+        Set<String> items = new HashSet<String>();
+
         try {
             expectedKeys = addTestKeys();
             expectedMembers = addTestMembers(expectedKeys);
