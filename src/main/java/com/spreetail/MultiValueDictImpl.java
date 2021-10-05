@@ -1,55 +1,60 @@
 package com.spreetail;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 public class MultiValueDictImpl implements MultiValueDict{
     private HashMap<String, Set<String>> mvd;
 
-    public MultiValueDictImpl() {
-        this.mvd = new HashMap<String, Set<String>>();
+
+    @Override
+    public List<String> getKeys() {
+        return null;
     }
 
-    public MultiValueDictImpl(HashMap<String, Set<String>> mvd) {
-        this.mvd = mvd;
+    @Override
+    public List<String> getMembers(String key) throws MultiValueDictException {
+        return null;
     }
 
-    public void addEntry(String setKey, String member) {
-
-    }
-
-    public void removeMember(String setKey, String member) {
-
-    }
-
-    public void removeAll(String setKey) {
+    @Override
+    public void addEntry(String key, String member) throws MultiValueDictException {
 
     }
 
-    public void listMembers(String key) {
+    @Override
+    public void removeMember(String key, String member) throws MultiValueDictException {
 
     }
 
-    public void listAllMembers() {
+    @Override
+    public void removeAll(String key) throws MultiValueDictException {
 
     }
 
-    public void listKeys() {
+    @Override
+    public void clear() {
 
     }
 
-    public boolean checkIfKeyExists(String key) {
-        return false;
-    }
-
-    public boolean checkIfMemberExists(String key) {
+    @Override
+    public boolean keyExists(String key) {
         return false;
     }
 
     @Override
-    public String toString() {
-        return "MVD{" +
-                "mvd=" + mvd.toString() +
-                '}';
+    public boolean memberExists(String key, String member) {
+        return false;
+    }
+
+    @Override
+    public List<String> getAllMembers() {
+        return null;
+    }
+
+    @Override
+    public List<?> getAllItems() {
+        return null;
     }
 }

@@ -30,16 +30,14 @@ public interface MultiValueDict {
     public void clear();
 
     // Returns whether a key exists or not.
-    public boolean keyExist(String key);
+    public boolean keyExists(String key);
 
     // Returns whether a member exists within a key. Returns false if the key does not exist.
-    public boolean memberExists(String key);
+    public boolean memberExists(String key, String member);
 
     // Returns all the members in the dictionary. Returns nothing if there are none. Order is not guaranteed.
     public List<String> getAllMembers();
 
     // Returns all keys in the dictionary and all of their members. Returns nothing if there are none. Order is not guaranteed.
     public List<?> getAllItems();
-
-    https://github.com/JordanMSchall/spreetail/
 }

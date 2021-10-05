@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d6493d3-081e-446c-b9ed-14e9d502ec19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MVDApp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDict.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/spreetail/MVDAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDict.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDict.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spreetail/MultiValueDictImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spreetail/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +37,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.MVDApp [test]">
     <configuration name="MVDApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spreetail.MVDApp" />
       <module name="MVDApp" />
@@ -63,8 +64,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MVDApp [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="test" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.MVDApp [test]" />
         <item itemvalue="Application.MVDApp" />
       </list>
     </recent_temporary>
@@ -77,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633379961242</updated>
-      <workItem from="1633379962704" duration="1533000" />
+      <workItem from="1633379962704" duration="7814000" />
     </task>
     <servers />
   </component>
