@@ -1,2 +1,5 @@
+com\spreetail\MultiValueDictImpl.class
+com\spreetail\MVDApp.class
+com\spreetail\MultiValueDict.class
 com\spreetail\MultiValueDictException.class
 com\spreetail\MultiValueDictIO.class
