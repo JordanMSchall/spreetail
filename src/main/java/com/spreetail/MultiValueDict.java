@@ -1,7 +1,13 @@
 package com.spreetail;
 
 import java.util.Set;
-
+/**
+ * This is a simple structure of a Multi Value Dictionary the implementations may use
+ * different data structures causing the need for this abstraction.
+ * 
+ * @author Jordan M. Schall
+ *
+ */
 public interface MultiValueDict {
 
     // Returns all the keys in the dictionary.

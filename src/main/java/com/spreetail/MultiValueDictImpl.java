@@ -1,7 +1,12 @@
 package com.spreetail;
 
 import java.util.*;
-
+/**
+ * This class is a HashMap<String, Set<String>> implementation of a Multi Value Dictionary.
+ * 
+ * @author Jordan M. Schall
+ *
+ */
 public class MultiValueDictImpl implements MultiValueDict {
     private HashMap<String, Set<String>> mvd;
 

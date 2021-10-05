@@ -11,7 +11,10 @@ import java.util.Set;
 import static org.junit.Assert.*;
 
 /**
- * Unit test for simple MVDApp.
+ * This class holds all unit tests based on current requirements. 
+ * 
+ * @author Jordan M. Schall
+ *
  */
 public class MVDAppTest {
     private MultiValueDict mvd;

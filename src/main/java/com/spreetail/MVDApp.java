@@ -6,7 +6,10 @@ import java.util.Scanner;
 import static com.spreetail.MultiValueDictIO.*;
 
 /**
- * Hello world!
+ * This is a simple implementation of a Multi value Dictionary App.
+ * 
+ * @author Jordan M. Schall
+ *
  */
 public class MVDApp {
 

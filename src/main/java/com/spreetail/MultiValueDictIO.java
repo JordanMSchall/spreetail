@@ -1,7 +1,12 @@
 package com.spreetail;
 
 import java.util.List;
-
+/**
+ * This class is designed to handle all IO of the application.
+ * 
+ * @author Jordan M. Schall
+ *
+ */
 public class MultiValueDictIO {
 
     public static void logKeys(MultiValueDict mvd, List<?> input) {
@@ -18,6 +23,10 @@ public class MultiValueDictIO {
             output("Empty Set");
             return;
         }
+        if (input.size() != 2) {
+            output("Malformed Arguements.");
+            return;
+        }
         try {
             String key = input.get(1);
             for (String member : mvd.getMembers(key))
@@ -28,8 +37,8 @@ public class MultiValueDictIO {
     }
 
     public static void logAdd(MultiValueDict mvd, List<String> input) {
-        if (input.size() < 3) {
-            output("Not enough args.");
+        if (input.size() != 3) {
+            output("Malformed Arguements.");
             return;
         }
         try {
@@ -43,8 +52,8 @@ public class MultiValueDictIO {
     }
 
     public static void logRemove(MultiValueDict mvd, List<String> input) {
-        if (input.size() < 3) {
-            output("Not enough args.");
+        if (input.size() != 3) {
+            output("Malformed Arguements.");
             return;
         }
         try {
@@ -58,8 +67,8 @@ public class MultiValueDictIO {
     }
 
     public static void logRemoveAll(MultiValueDict mvd, List<String> input) {
-        if (input.size() < 2) {
-            output("Not enough args.");
+        if (input.size() != 2) {
+            output("Malformed Arguements.");
             return;
         }
         try {
@@ -72,8 +81,8 @@ public class MultiValueDictIO {
     }
 
     public static void logKeyExists(MultiValueDict mvd, List<String> input) {
-        if (input.size() < 2) {
-            output("Not enough args.");
+        if (input.size() != 2) {
+            output("Malformed Arguements.");
             return;
         }
         String key = input.get(1);
@@ -83,6 +92,10 @@ public class MultiValueDictIO {
 
 
     public static void logItems(MultiValueDict mvd, List<String> input) {
+        if(mvd.getKeys() == null || mvd.getKeys().isEmpty()) {
+            output("Empty Set");
+            return;
+        }
         for( Object item: mvd.getAllItems()){
             output((String)item);
         };
@@ -98,8 +111,8 @@ public class MultiValueDictIO {
     }
 
     public static void logMemberExist(MultiValueDict mvd, List<String> input) {
-        if (input.size() < 3) {
-            output("Not enough args.");
+        if (input.size() != 3) {
+            output("Malformed Arguements.");
             return;
         }
         String key = input.get(1);
