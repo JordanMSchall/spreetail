@@ -1,6 +1,5 @@
 package com.spreetail;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MultiValueDictIO {
@@ -84,8 +83,8 @@ public class MultiValueDictIO {
 
 
     public static void logItems(MultiValueDict mvd, List<String> input) {
-        for( String item: (List<String>)mvd.getAllItems()){
-            output(item);
+        for( Object item: mvd.getAllItems()){
+            output((String)item);
         };
     }
 

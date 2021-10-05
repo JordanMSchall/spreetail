@@ -2,7 +2,6 @@ package com.spreetail;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 import static com.spreetail.MultiValueDictIO.*;
 
@@ -14,8 +13,9 @@ public class MVDApp {
     public static MultiValueDict mvd = new MultiValueDictImpl();
 
     public static void main(String[] args) {
-        String line = "";
         Scanner scanner = new Scanner(System.in);
+    	try {
+        String line = "";
         MultiValueDictIO.output("****Welcome to the Multi-Value Dictionary terminal app****");
         MultiValueDictIO.output("To see a list of available commands simply press enter");
         MultiValueDictIO.output("To exit simply type exit and hit enter");
@@ -25,6 +25,12 @@ public class MVDApp {
             String operation = input.get(0);
             mapOperation(operation, input);
         }
+    	} catch ( Exception e) {
+    		MultiValueDictIO.output("Unhandled Exception, stopping applicaiton");
+    	} finally {
+    		scanner.close();
+    	}
+        
 
     }
 

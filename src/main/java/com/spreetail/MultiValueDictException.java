@@ -1,7 +1,10 @@
 package com.spreetail;
 
 public class MultiValueDictException extends Exception {
-    public MultiValueDictException(String message) {
+
+	private static final long serialVersionUID = 1L;
+
+	public MultiValueDictException(String message) {
         super(message);
     }
 }
